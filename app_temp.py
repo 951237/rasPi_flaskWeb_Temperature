@@ -4,7 +4,7 @@ import adafruit_dht
 from datetime import datetime
 
 dhtDevice = adafruit_dht.DHT22(board.D4)
-k = 0
+# k = 0
 while True:
     # todo : 날짜 형식으로 변환하기
     today = datetime.now()
@@ -17,7 +17,7 @@ while True:
         with open("result_temp.txt","w") as f:
             f.write(f'{date_time},{result}\n')
         k += 1
-        print(f'{k} 기록함!')
-        time.sleep(1)
+        print(f'{date_time} 기록!')
+        time.sleep(5)
     except RuntimeError as error:
         print(error.args[0])
